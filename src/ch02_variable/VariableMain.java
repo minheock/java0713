@@ -25,6 +25,18 @@ public class VariableMain {
 		int myMoney;// 선언
 		myMoney = 10000; // 할당
 		System.out.println(myMoney);
+		
+		int myAge = 20;
+		
+		System.out.println(myAge);
+		myMoney = 20000; //수정
+		System.out.println(myMoney);
+		
+		// 상수의 선언
+		// 값이 변경되면 안되는
+		final double MATH_PI = 3.14; // 상수는 대문자로 많이 사용
+		System.out.println(MATH_PI);
+		// MATH_PI = 3.22; 오류남
 	}
 
 }
