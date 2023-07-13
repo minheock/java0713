@@ -21,6 +21,10 @@ public class VariableMain {
 		 * 확장하여 프로그램의 복잡성을 관리할 수 있음.
 		 * 
 		 */
+		
+		int myMoney;// 선언
+		myMoney = 10000; // 할당
+		System.out.println(myMoney);
 	}
 
 }
