@@ -37,6 +37,43 @@ public class VariableMain {
 		final double MATH_PI = 3.14; // 상수는 대문자로 많이 사용
 		System.out.println(MATH_PI);
 		// MATH_PI = 3.22; 오류남
+		
+		System.out.println("==========String 내장 메소드 ===========");
+		String fruits = "Apple, Banana, Cherry";
+		// string.length()
+		
+		int len = fruits.length();
+		System.out.println("fruits 길이는 :" + len);
+		// string.charAt(인덱스)
+		// 인덱스는 위치를 의미
+		// 0부터 시작
+		char alpha = fruits.charAt(3);
+		System.out.println(alpha);
+
+		// string.indexOf(문자열) 해당 문자열의 인덱스 리턴
+		System.out.println(fruits.indexOf("Banana"));
+		System.out.println(fruits.indexOf("banana")); //존재하지 않으면 -1
+		
+		// string.substring(시작 인덱스, 끝 인덱스)
+		// 해당 문자열을 시작 인덱스부터 끝 인덱스 전까지 자름.
+		System.out.println(fruits.substring(7, 13));
+		// string.substring(시작 인덱스) 입력값이 1개만 들어오면
+		// 시작 인덱스부터 끝까지 자름
+		System.out.println(fruits.substring(15));
+		
+		// string.replace(바뀔 문자, 바꾸고 싶은 문자)
+		System.out.println(fruits.replace("Cherry", "durian"));
+		String worldString = "  The  New  World!!   ";
+		System.out.println(worldString.replace(" ",""));
+				
+		String name = "Sam Kim";
+		//name 문자열의 공백을 찾아서
+		// Sam 이라는 문자열만 출력하시오
+		int numLen = name.indexOf(" ");
+		String last = name.substring(0,numLen) ;
+		System.out.println(last);
+		String first = name.substring(numLen).replace(" ", "");
+		System.out.println("성은:" + first + " 이름은:" + last);
 	}
 
 }
