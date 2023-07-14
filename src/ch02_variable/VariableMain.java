@@ -74,6 +74,35 @@ public class VariableMain {
 		System.out.println(last);
 		String first = name.substring(numLen).replace(" ", "");
 		System.out.println("성은:" + first + " 이름은:" + last);
+		
+		// 자동변환
+		// 큰 범위 = 작은 범위
+		// char < int < long < float < double
+		int intVal = 15;
+		double doubVal = 1.23;
+		
+		long longVal= intVal; // long이 더 큰 범위이기 때문에 자동으로 형 변환 됨
+		System.out.println(longVal);
+		int intVal2 = (int) longVal;// ctrl + 1 가이드가 나옴.
+		System.out.println(intVal2);
+		double doubleVal = 10.33333;
+		int intVal3 = (int) doubleVal;
+		System.out.println(intVal3); // 주의해야함 소수점 손실. double , float 는 실수 나머지는 정수. 
+		
+		// 문자열을 정수 타입으로 형 변환.
+		
+		String strNum= "1234";
+		int	intNum	= Integer.parseInt(strNum);
+		System.out.println(intNum);
+		System.out.println(strNum+100);
+		System.out.println(intNum+100);
+		String strCast= intNum+"";
+		System.out.println(strCast + 100);
+		
+		String strCast2 = Integer.toString(intNum);
+		System.out.println(strCast2 + 100);
+		
+		
 	}
 
 }
