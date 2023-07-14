@@ -96,9 +96,10 @@ public class VariableMain {
 		System.out.println(intNum);
 		System.out.println(strNum+100);
 		System.out.println(intNum+100);
+		// 정수타입을 문자열과 더하면 문자열
 		String strCast= intNum+"";
 		System.out.println(strCast + 100);
-		
+		// toString 을 사용하여도 문자열이 됨.
 		String strCast2 = Integer.toString(intNum);
 		System.out.println(strCast2 + 100);
 		
