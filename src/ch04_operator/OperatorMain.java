@@ -130,6 +130,7 @@ public class OperatorMain {
 		String myId = scan.nextLine();
 		System.out.printf("입력 아이디: %s\n문자열 길이: %d자리 입니다.\n", myId, myId.length());
 		System.out.println(myId.length() <= 14 && myId.length() >= 8 ? "사용가능한 아이디 입니다." : "8~14 자리로 입력해주세요.");
+		
 	}
 
 }
