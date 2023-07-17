@@ -30,10 +30,11 @@ public class result01 {
 		
 		//3번
 		int example = 278;
-		int first = example % 2;
-		int mid = first % 10;
-		int last = example % 1;
-		System.out.println(mid);
+		int first = example % 10;
+		int mid = example / 100;
+		int last = example / 10 % 10;
+		int result = first + mid + last;
+		System.out.println(result);
 	}
 
 }
