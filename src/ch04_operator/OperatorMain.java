@@ -114,6 +114,25 @@ public class OperatorMain {
 		 
 		 
 		 
+		 System.out.println("==============논리 연산자===============\n");
+		 // 조건 체크를 여러번 하지않고 한 번에 끝낼 수 있도록 도와줌
+		 int inputAge = 24;
+		 String inputPhone ="01096101000";
+		 System.out.println(inputAge >= 14);
+		 System.out.println(inputPhone.length() == 11);
+		 // && and 의 의미 true && true 이면 true
+		 // || or 의 의미 둘 중 하나가 true 이면 true
+		 System.out.println(inputAge >= 14 && inputPhone.length()== 11);
+		 
+		 // 사용자의 아이디를 입력받아 8 자리 이상 14자리 이하일 경우 > 사용가능한 아이디입니다.
+		 // 아닐 경우 > "8~14 자리로 입력해주세요."
+		 // 를 출력하시오.
+		 
+		 Scanner scan = new Scanner(System.in);
+		 System.out.println("==============id 유효성 검사===============");
+		 System.out.println("아이디를 입력해 주세요 : \n");
+		 String myId = scan.nextLine();
+		 System.out.println(myId.length() <= 14 && myId.length() >= 8 ? "사용가능한 아이디 입니다." : myId.length() +"자리 입니다.\n" + "8~14 자리로 입력해주세요." );
 	}
 
 }
