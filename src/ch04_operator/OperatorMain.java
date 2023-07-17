@@ -1,5 +1,7 @@
 package ch04_operator;
 
+import java.util.Scanner;
+
 public class OperatorMain {
 
 	public static void main(String[] args) {
@@ -101,9 +103,14 @@ public class OperatorMain {
 		 System.out.println(grade);
 		 
 		 
-		 
-		 
-		 
+		 // 문제 1 . 사용자의 나이를 입력받아 10대, 20대 , 30대 ... 를 출력하고
+		 // 	10대 일 경우에는 입장 불가를 출력하시오
+		 Scanner scanner = new Scanner(System.in);
+		 System.out.println("===============================");
+		 System.out.println("나이를 입력해 주세요 : \n");
+		 int age = scanner.nextInt();
+		 String ageCut = (age >= 30) ? ("30대") : ((age >= 20) ? ("20대") : ("만 19세 미만은 입장불가입니다."));
+		 System.out.println(ageCut);
 		 
 		 
 		 
