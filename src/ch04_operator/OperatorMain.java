@@ -31,7 +31,19 @@ public class OperatorMain {
 		System.out.println(num);//9
 		num %=2; // 나누기의 나머지 리턴.
 		System.out.println(num);
-
+		
+		System.out.println("\n ========== 산술 연산자 =============/n");
+		// + - * / %
+		int numA = 10;
+		int numB = 3;
+		numA = numA + 1;
+		System.out.println(numA);
+		System.out.printf("numA:%d numB:%d", numA,numB);
+		System.out.println("더하기 :" + (numA + numB));
+		System.out.println("빼기 :" + (numA - numB));
+		System.out.println("곱하기 :" + (numA * numB));
+		System.out.println("나누기 :"+ (numA / numB));
+		System.out.println("나머지 :"+ (numA % numB));
 	}
 
 }
