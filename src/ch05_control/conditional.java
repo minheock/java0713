@@ -97,7 +97,41 @@ public class conditional {
 		} else {
 			System.out.println("회원가입 실패");
 		}
-
+		
+		// switch 문
+		int month = 3;
+		
+		switch (month) {
+		case 0: {
+			System.out.println("수강등록");
+			break;
+			
+		}
+		case 1: {
+			System.out.println("프로그래밍 기초");
+			break;
+		}
+		case 2: {
+			System.out.println("db");
+			break;
+		}
+		case 3: {
+			System.out.println("웹 프로그래밍");
+			break;
+		}
+		case 4:
+		case 5:
+			System.out.println("머신러닝");
+			break;
+		default:
+			System.out.println("프로젝트!!!");
+		}
+		
+		
+		
+		
+		
+		
 	}
 //		System.out.println(price); 지역변수 선언 스코프 밖 사용할 수 없다.
 
