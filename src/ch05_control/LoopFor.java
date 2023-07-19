@@ -97,12 +97,16 @@ public class LoopFor {
 			if(i % 6 == 5) {
 				System.out.println("-------");
 			}
-			Thread.sleep(400);
 		}
 		
 		
+		int example = 478941533;
+		int result = 0;
+		String strNum = example + "";
+		for(int i = 0; i < strNum.length(); i++) {
+			result += Integer.parseInt(strNum.substring(i, i+1));
+		}
+		System.out.println("각 자리를 더한 값 : "+ result) ;
 		
-		
-	
 	}
 }
