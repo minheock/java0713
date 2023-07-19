@@ -40,4 +40,5 @@ public class Ch05_Ex02 {
 
 		scanner.close();
 	}
+	
 }
