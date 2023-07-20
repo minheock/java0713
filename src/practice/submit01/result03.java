@@ -65,13 +65,13 @@ public class result03 {
 		 * 문제 4
 		 */
 		String j = "*****";
-//		for (int i = 1; i <= 5; i++) {
-//			j = j.substring(0, j.length() - 1);
-//			System.out.println(j);
-//		}
-		for(int i = 0; i < 5; i++) {
-			System.out.println(j.substring(i));
+		for (int i = 1; i <= 5; i++) {
+			j = j.substring(0, j.length() - 1);
+			System.out.println(j);
 		}
+//		for(int i = 0; i < 5; i++) {
+//			System.out.println(j.substring(i));
+//		}
 
 	}
 
