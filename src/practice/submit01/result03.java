@@ -53,14 +53,24 @@ public class result03 {
 		int count = 0;
 		count += findWally.length() - findWally.replace("월", "").length();
 		System.out.println(count);
-	
+		
+		for(int i = 0; i < findWally.length()-1; i++) {
+			String subWally = findWally.substring(i, i+2);
+			if(subWally.equals("월리")) {
+				count++;
+			}
+		}
+		System.out.println(count/2);
 		/*
 		 * 문제 4
 		 */
-		String j = "******";
-		for (int i = 1; i <= 5; i++) {
-			j = j.substring(0, j.length() - 1);
-			System.out.println(j);
+		String j = "*****";
+//		for (int i = 1; i <= 5; i++) {
+//			j = j.substring(0, j.length() - 1);
+//			System.out.println(j);
+//		}
+		for(int i = 0; i < 5; i++) {
+			System.out.println(j.substring(i));
 		}
 
 	}

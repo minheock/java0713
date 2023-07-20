@@ -108,5 +108,29 @@ public class LoopFor {
 		}
 		System.out.println("각 자리를 더한 값 : "+ result) ;
 		
+		/*
+		 * break문
+		 * 반복문 내에서 break 문이 실행되면 해당 반복문을 즉시 종료
+		 * 1~n 까지 더한값이 100이상이 되는 지점의 n을 구하시오
+		 */
+		int getSum = 0;
+		for(int i = 0; i < 9999; i++) {
+			getSum += i;
+			if(sum >= 100) {
+				System.out.println(getSum + "이 되는 n:" + 1);
+				break;
+			}
+		}
+		/*
+		 * 구구단 출력 2 ~ 9 단
+		 */
+		
+		for(int i = 1; i <= 9; i++) {
+				System.out.println(i + "단");
+			for(int x = 1; x <= 9; x++) {
+				System.out.println(i + "x" + x + "=" + i*x + "\n" );
+			}
+		}
+		
 	}
 }
