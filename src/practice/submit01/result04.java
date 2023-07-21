@@ -1,6 +1,6 @@
 package practice.submit01;
 
-public class reuslt04 {
+public class result04 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -75,36 +75,94 @@ public class reuslt04 {
 		
 	
 	// 문제 3
-//		System.out.println("sfsdfsdf".substring(0,1));
+		// for문 하나로 풀기
+	System.out.println("방법1");
 		String tree = "*";
-//		tree = "     " + tree;
-//		System.out.println(tree);
-//		for(int i = 0; i<5; i++) {
-//			tree = tree.substring(0,1).replace(" ","");
-//			String in = "**";
-//			tree = tree.format("%s%s",tree, in);
-//		}
-//		System.out.println(tree);
+		//정면
+		for(int i = 0; i<5; i++) {
+			String in = "**";
+			if(i == 0) {
+				System.out.println("    " + tree);
+			}
+			if(i == 1) {
+				tree = tree.format("%s%s",tree, in);
+				System.out.println("   " + tree);
+			}
+			if(i == 2) {
+				tree = tree.format("%s%s",tree, in);
+				System.out.println("  " + tree);
+			}
+			if(i == 3) {
+				tree = tree.format("%s%s",tree, in);
+				System.out.println(" " + tree);
+			}
+			if(i == 4) {
+				tree = tree.format("%s%s",tree, in);
+				System.out.println(tree);
+			}
+		}
+	
+		//반전
+		for(int i = 0; i<5; i++) {
+		
+			if(i == 0) {
+				System.out.println("\n"+tree);
+			}
+			if(i == 1) {
+				System.out.println(" " + tree.substring(i*2));
+			}
+			if(i == 2) {
+				System.out.println("  " + tree.substring(i*2));
+			}
+			if(i == 3) {
+				System.out.println("   " + tree.substring(i*2));
+			}
+			if(i == 4) {
+				System.out.println("    " + tree.substring(i*2));
+			}
+		}
+		
+		
+		
+		System.out.println("방법2");
+		//정면
+		tree = "*";
 		for (int i = 0; i < 5; i++) {
+			if(i > 0) {
+				tree += "**";
+			}
 			for (int j = 4 - i; j > 0; j--) {
 				System.out.print(" ");
 			}
 			System.out.println(tree);
-			tree += "**";
 		}
-	
-		System.out.println("\n");
 		
+		System.out.println("\n");
+		//반전
 		int stop = 0;
 		for (int i = 0; i < 5; i++) {
 			stop = 0;
+			if(i > 0 ) {
+				tree = tree.substring(0, tree.length()-2);
+			}
+			System.out.println(tree);
 			for (int j = stop; j < i+1; j++) {
 				System.out.print(" ");
 			}
-			tree = tree.substring(0, tree.length()-2);
-			System.out.println(tree);
+			
+			
 		}
-		
+		// 다이아몬드
+//		int num = 50;
+//		for(int i = num-2; i>=0; i--) {
+//			for(int j = num -i; j > 1; j--) {
+//				System.out.println(" ");
+//			}
+//			for(int j = 0 ; j<=2*i; j++) {
+//				System.out.println("*");
+//			}
+//			System.out.println();
+//		}
 		
 	}
 }	
