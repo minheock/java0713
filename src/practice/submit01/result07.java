@@ -3,6 +3,7 @@ package practice.submit01;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 import ch08_collection.CollectionList;
 
@@ -32,11 +33,13 @@ public class result07 {
 	public static ArrayList<Integer> makeLotto() {
 		ArrayList<Integer> intList = new ArrayList<Integer>();
 		Random random = new Random();
-		for(int i = 0; i < 6; i++) {
-			
+		while(intList.size() < 6) {
 			intList.add(random.nextInt(1,45));
-			for(int j = 0; j < intList.size(); j++) {
-				if(intList.get(i) == intList.get(j)) {
+			
+		}
+		for(int i =0 ; i < intList.size()-1; i++) {
+			for(int j = 0; j < intList.size()-1; j ++) {
+				if(intList.get(j) == intList.get(j+1)) {
 					intList.remove(i);
 				}
 			}
