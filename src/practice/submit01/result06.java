@@ -50,25 +50,25 @@ public class result06 {
 		for(int i = 0; i < list.length; i++) {
 			if(list[i].substring(0,1).equals(firstName)){
 				count++;
-				name += list[i];
+				name += list[i] + "씨 ";
 			}
 		}
 		System.out.printf("%s씨성을 가진 동기분이 총 %d명 있습니다.\n%s\n", firstName, count, name);
 		System.out.println("===================");
 	}
 	public static void MinMax(int[] arr) {
-		int last = arr.length;
-		for(int i = 0 ; i < arr.length-1; i++) {
-			for(int j = 0; j < arr.length-1; i++) {
-				if(arr[j] < arr[j + 1]) {
-					int k = arr[j];
-					arr[j] = arr[j+1];
-					arr[j+1] = k;
-				}
+		int maxVal = arr[0];
+		int minVal = arr[0];
+		for(int i = 1 ; i < arr.length; i++) {
+			if(maxVal < arr[i]) {
+				maxVal = arr[i];
+			}
+			if(minVal > arr[i]) {
+				minVal = arr[i];
 			}
 			
 		}
-		System.out.println("최댓값 :" + arr[0] + "\n최솟값 :" + arr[last-1]);
+		System.out.println("최댓값 : " + maxVal  + "\n최솟값 : " + minVal);
 		
 	}
 	public static void MinAndMax(int[] arr) {
