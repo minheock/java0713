@@ -1,6 +1,7 @@
 package practice.submit01;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
 
@@ -12,7 +13,7 @@ public class result07 {
 		 * 없습니다.)
 		 */
 		ArrayList<Integer> weekLotto = null;
-		weekLotto = makeLotto();
+		weekLotto = makeLotto(args);
 		System.out.println(weekLotto.toString());
 		
 		/*
@@ -27,7 +28,7 @@ public class result07 {
 		 */
 
 	}
-	public static ArrayList<Integer> makeLotto() {
+	public static ArrayList<Integer> makeLotto(String [] arr) {
 		Random random = new Random();
 		ArrayList<Integer> intList = new ArrayList<Integer>();
 		// 랜덤한 값을 넣어준다.
