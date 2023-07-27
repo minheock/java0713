@@ -39,7 +39,8 @@ public class result07 {
 		ArrayList<Integer> intList = new ArrayList<Integer>();
 		// 랜덤한 값을 넣어준다.
 		for(int i = 0 ; i < arr.length; i++) {
-			System.out.println(arr[i]);
+			Integer.parseInt(arr[i]);
+			intList.add(arr[i]);
 		}
 		
 		while(intList.size() != 6) {
