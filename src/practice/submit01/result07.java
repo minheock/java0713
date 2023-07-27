@@ -1,10 +1,9 @@
 package practice.submit01;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
-
+import java.util.Scanner;
 public class result07 {
 
 	public static void main(String[] args) {
@@ -14,6 +13,7 @@ public class result07 {
 		 */
 		ArrayList<Integer> weekLotto = null;
 		weekLotto = makeLotto(args);
+		System.out.println("문제 1번.");
 		System.out.println(weekLotto.toString());
 		
 		
@@ -25,23 +25,58 @@ public class result07 {
 		 * 사용자의 매개변수 전달 값에도 중복은 없습니다.
 		 */
 		String [] strArr = {"1", "3", "22"};
+		int[] intarr = {1, 3, 22};
+		System.out.println("\n문제 2번.");
 		System.out.println(makeLotto(strArr));
+		
+		
+		
+		
 		
 		/*
 		 * Q 3. 위의 메서드를 활용하여 로또번호 생성 콘솔 프로그램을 만들어 주세요. [상황 1] n을 입력하면 전체 자동생성 실행 결과
 		 * 
 		 * [상황 2] y를 입력하고 4 10 과같이 띄어쓰기로 입력
 		 */
-
+		String [] strArr2 = {};
+		System.out.println("\n문제 3번.");
+		Scanner scan = new Scanner(System.in);
+		boolean bool = true;
+		while(bool) {
+		System.out.println("==========================");
+		System.out.println("행운의 로또 번호 생성기 입니다.\n"
+				+ "입력 값이 있으면 'y' , 전체 자동으로 선택하려면 'n'을 선택하세요>>>");
+		String autoLottoNum = scan.nextLine();
+		if(autoLottoNum.equals("y")) {
+			System.out.println("번호를 한 칸씩 띄어서 입력해주세요 최대 6개");
+			String selectNum = scan.nextLine();
+			System.out.println("선택하신 번호는\n"
+					+ selectNum.replace(" ", ","));
+			String[] splNum = selectNum.split(" ");
+			System.out.println("이번주 행운의 로또 번호는 ♥");
+			System.out.println(makeLotto(splNum));
+			System.out.println("GOOD LUCK ♥");
+			
+		}else if(autoLottoNum.equals("n")) {
+			System.out.println("이번주 행운의 로또 번호는 ♥");
+			System.out.println(weekLotto.toString());
+			System.out.println("GOOD LUCK ♥");
+		}else {
+			System.out.println("다른 입력 값 입니다. 다시 해주세요.");
+		}
+		System.out.println("==========================");
+		}
+		
+		
 	}
 	public static ArrayList<Integer> makeLotto(String [] arr) {
 		Random random = new Random();
 		ArrayList<Integer> intList = new ArrayList<Integer>();
 		// 랜덤한 값을 넣어준다.
-		for(int i = 0 ; i < arr.length; i++) {
-			Integer.parseInt(arr[i]);
-			intList.add(arr[i]);
-		}
+		// 스트링 리스트를 정수타입으로 변환해서 넣어준다.
+		for(String s : arr) {
+            intList.add(Integer.parseInt(s));
+        }
 		
 		while(intList.size() != 6) {
 			intList.add(random.nextInt(1,45));
@@ -58,6 +93,9 @@ public class result07 {
 		}
 		Collections.sort(intList);
 		return intList;
+		
+	}
+	public static ArrayList<S> name() {
 		
 	}
 	
