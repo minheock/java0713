@@ -41,8 +41,7 @@ public class result07 {
 		String [] strArr2 = {};
 		System.out.println("\n문제 3번.");
 		Scanner scan = new Scanner(System.in);
-		boolean bool = true;
-		while(bool) {
+		while(true) {
 		System.out.println("==========================");
 		System.out.println("행운의 로또 번호 생성기 입니다.\n"
 				+ "입력 값이 있으면 'y' , 전체 자동으로 선택하려면 'n'을 선택하세요>>>");
@@ -56,11 +55,12 @@ public class result07 {
 			System.out.println("이번주 행운의 로또 번호는 ♥");
 			System.out.println(makeLotto(splNum));
 			System.out.println("GOOD LUCK ♥");
-			
+			break;
 		}else if(autoLottoNum.equals("n")) {
 			System.out.println("이번주 행운의 로또 번호는 ♥");
 			System.out.println(weekLotto.toString());
 			System.out.println("GOOD LUCK ♥");
+			break;
 		}else {
 			System.out.println("다른 입력 값 입니다. 다시 해주세요.");
 		}
@@ -95,9 +95,7 @@ public class result07 {
 		return intList;
 		
 	}
-	public static ArrayList<S> name() {
-		
-	}
+
 	
 	
 	

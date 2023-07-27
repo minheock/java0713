@@ -1,4 +1,6 @@
-package ch09_classSchool;
+package ch09_class.school;
+
+import ch09_class.commons.UtilClass;
 
 public class Student {
 
@@ -24,7 +26,7 @@ public class Student {
 	private double avg;
 	
 	// 2. 생성자 만들기
-//	public Student() {}
+	public Student() {}
 	//Shift + alt + s
 
 	public Student(String name, int kor, int eng, int math) {
@@ -33,6 +35,16 @@ public class Student {
 		this.kor = kor;
 		this.eng = eng;
 		this.math = math;
+		setAvg();
+		
+	}
+	public Student(String name, int kor, int eng, int math, double avg) {
+		super();
+		this.name = name;
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math;
+		this.avg = avg;
 	}
 	
 	@Override
@@ -50,6 +62,7 @@ public class Student {
 	}
 	public int getKor() {
 		return kor;
+		
 	}
 	public void setKor(int kor) {
 		this.kor = kor;
@@ -59,13 +72,21 @@ public class Student {
 	}
 	public void setEng(int eng) {
 		this.eng = eng;
+		setAvg();
 	}
 	public int getMath() {
 		return math;
 	}
 	public void setMath(int math) {
 		this.math = math;
+		setAvg();
 	}
-	
+	public void setAvg() {
+		this.avg = UtilClass.weRound((kor + eng + math) / 3.0, 1);
+	}
+	public double getAvg() {
+		return avg;
+		
+	}
 
 }
