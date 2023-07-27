@@ -55,8 +55,8 @@ public class StudentMain {
 			}
 		});
 		// 람다 표현식 java 8 부터 사용
-//		Collections.sort(stuList, (sutA, sutB)-> 
-//		(sutB.getAvg() - sutA.getAvg() < 0) ? (1): (-1));
+//		Collections.sort(stuList, (a, b)-> 
+//		(a.getAvg() - b.getAvg() < 0) ? (1): (-1));
 		
 		for(int i = 0 ; i < stuList.size(); i++) {
 			System.out.println((i+1) + "등." + stuList.get(i));
