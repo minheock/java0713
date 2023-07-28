@@ -65,7 +65,7 @@ public class FutureStudent {
 	// 하루가 지나는 이벤트 메서드
 	public void endDay() {
 		// 20 ~ 60 사이의 랜덤 숫자
-		int rand = (int)((Math.random() * 41) + 20);
+		int rand = (int)((Math.random() * 51) + 20);
 		exp += rand;
 		System.out.println(this.name + "씨의 현재 경험치 :" + exp);
 		if(exp >= 100) {
