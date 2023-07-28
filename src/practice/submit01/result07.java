@@ -2,8 +2,12 @@ package practice.submit01;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
+
+import ch05_control.conditional;
 public class result07 {
 
 	public static void main(String[] args) {
@@ -67,7 +71,10 @@ public class result07 {
 		System.out.println("==========================");
 		}
 		
-		
+		// 셔플 
+		System.out.println(shuffleLotto());
+		// 해쉬
+		System.out.println(setLotto());
 	}
 	public static ArrayList<Integer> makeLotto(String [] arr) {
 		Random random = new Random();
@@ -95,8 +102,33 @@ public class result07 {
 		return intList;
 		
 	}
-
-	
+	// 셔플로 푸는법
+	public static ArrayList<Integer> shuffleLotto() {
+		ArrayList<Integer> numbers = new ArrayList<Integer>();
+		int maxNum = 45;
+		for(int i = 1; i<=maxNum; i++) {
+			numbers.add(i);
+		}	
+		Collections.shuffle(numbers);
+		ArrayList<Integer> result = new ArrayList<Integer>(numbers.subList(0, 6));
+		Collections.sort(result);
+		return result;
+	}
+	// hash set 으로 푸는법
+	public static ArrayList<Integer> setLotto() {
+		ArrayList<Integer> numbers = new ArrayList<Integer>();
+		HashSet<Integer> lottoSet = new HashSet<Integer>();
+		while(lottoSet.size() < 6) {
+			int num = (int) (Math.random() * 45 +1);
+			lottoSet.add(num);
+		}
+		for(Integer val : lottoSet) {
+			numbers.add(val);
+		}
+		Collections.sort(numbers);
+		return numbers;
+		
+	}
 	
 	
 
