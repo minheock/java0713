@@ -40,6 +40,27 @@ public class BoardDB {
 		System.out.println("존재하지 않는 글 번호입니다.");
 	}
 	
+	// 게시글 삭제
+	public void deleteBoard(int no, String id) {
+		for(int i = 0 ; i < boardlist.size(); i++) {
+			Board board = boardlist.get(i);
+			if(board.getNo() == no) {
+				if(board.getAuthor().equals(id)) {
+					System.out.println("삭제 게시글");
+					System.out.println("제목:" + board.getTitle());
+					System.out.println("작성자: " + board.getAuthor());
+					System.out.println("내용: " + board.getContent());
+					boardlist.remove(i);
+					return;
+				}else {
+					System.out.println("작성자가 아닙니다.");
+					return;
+				}
+				
+			}
+		}
+		System.out.println("존재하지 않는 글 번호입니다.");
+	}
 	
 	}
 
