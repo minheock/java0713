@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class Cafe {
 	String name;
-	static ArrayList<String> menuList;
+	static ArrayList<Coffee> menuList;
 	
 	
 	
-	public Cafe(String name, ArrayList<String> menuList) {
+	public Cafe(String name, ArrayList<Coffee> menuList) {
 		super();
 		this.name = name;
 		this.menuList = menuList;
@@ -33,25 +33,18 @@ public class Cafe {
 	}
 
 
-	public ArrayList<String> getMenuList() {
+	public ArrayList<Coffee> getMenuList() {
 		return menuList;
 	}
 
 
-	public void setMenuList(ArrayList<String> menuList) {
+	public void setMenuList(ArrayList<Coffee> menuList) {
 		this.menuList = menuList;
 	}
 	
-	Coffee star1 = new Coffee("아메리카노", 5000);
-	Coffee star2 = new Coffee("카푸치노", 6000);
-	Coffee star3 = new Coffee("오곡라떼", 7000);
-	Coffee aka1 = new Coffee("아메리카노", 2500);
-	Coffee aka2 = new Coffee("바닐라라떼", 3000);
-	Coffee aka3 = new Coffee("아이스티", 3500);
-	/* 그냥 작성하면 되겠지만 여기서는 메뉴들을
-	 * 1. 리스트에 담아줘야함
-	 * 2. 담아준걸 반복문으로 돌려서 출력.
-	 * 3. 
-	 */
+	public void addCoffe(Coffee coffee) {
+		menuList.add(coffee);
+	}
+	
 	
 }

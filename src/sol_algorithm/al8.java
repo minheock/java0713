@@ -26,7 +26,8 @@ public class al8 {
 			}
 			i++;
 		}
-		
+		int j = 10;
 		System.out.println(answer);
+		System.out.println(Integer.parseInt("3"));
 	}
 }

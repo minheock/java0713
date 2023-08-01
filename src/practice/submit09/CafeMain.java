@@ -19,6 +19,7 @@ public class CafeMain {
 				System.out.println("어서오세요 아카입니다.");
 			}else if(select == 3) {
 				System.out.println("사무실로 복귀합니다..");
+				break;
 			}
 		}
 	}
