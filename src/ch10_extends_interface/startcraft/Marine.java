@@ -9,7 +9,6 @@ public class Marine extends StarUnit{
 
 	public Marine(String name, int damage, int hp, int armor) {
 		super(name, damage, hp, armor);
-		
 	}
 	public void stimpack() {
 		System.out.println("두두두두두~숴리야!!!!");

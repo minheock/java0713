@@ -14,15 +14,6 @@ public class Cafe {
 		this.menuList = menuList;
 	}
 
-	
-
-	@Override
-	public String toString() {
-		return "Cafe [name=" + name + ", menuList=" + menuList + ", getMenuList()=" + getMenuList() + "]";
-	}
-
-
-
 	public String getName() {
 		return name;
 	}
@@ -42,9 +33,13 @@ public class Cafe {
 		this.menuList = menuList;
 	}
 	
+	
 	public void addCoffe(Coffee coffee) {
 		menuList.add(coffee);
 	}
 	
+	public void buyCoffe(Coffee coffee) {
+		
+	}
 	
 }
