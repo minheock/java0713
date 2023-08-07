@@ -30,10 +30,7 @@ public class ExceptionMain {
 		}
 		System.out.println(ExMethod.dateMillsec2("2023.07.12"));
 		
-		// 입력받은 이름을 콘솔에 출력하는 메서드
-		// 만약 입력이 없으면 exception 처리 만약 1자리이면 exception
-		// 사용자 정의 예외 처리
-		// 코드상 오류는 아니지만 해당 업무에서 오류로 보는 상황에 대한 예외처리 방법
+		
 		try {
 			ExMethod.printName("길");
 		} catch (BizException e) {
