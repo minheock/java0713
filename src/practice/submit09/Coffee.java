@@ -1,16 +1,20 @@
 package practice.submit09;
 
 public class Coffee {
-	String name;
-	int price;
+	private String name;
+	private int price;
 	
 	
 	public Coffee(String name, int price) {
-		super();
 		this.name = name;
 		this.price = price;
 	}
 	
+	@Override
+	public String toString() {
+		return "Coffee [name=" + name + ", price=" + price + "]";
+	}
+
 	public String getName() {
 		return name;
 	}

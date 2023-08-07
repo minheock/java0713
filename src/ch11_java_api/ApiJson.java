@@ -6,12 +6,16 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import org.json.simple.JSONArray;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 
 
 public class ApiJson {
-	private static final String JSONParser = null;
+//	private static final String JSONParser = null;
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, ParseException {
 		// "https://api.upbit.com/v1/market/all"
 		// coin 전체정보(한글명, 영문명,거래코드)
 		String mainUrl = "https://api.upbit.com/v1/market/all";
@@ -43,11 +47,8 @@ public class ApiJson {
 			in.close();
 			System.out.println(response.toString());
 			
-			
 			JSONParser parser = new JSONParser();
 			JSONArray jsonArray = (JSONArray) parser.parse(response.toString());
-			
-			
 			
 			
 			
