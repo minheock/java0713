@@ -1,6 +1,6 @@
 package sol_algorithm;
 import java.util.Scanner;
-public class al4 {
+public class Al4 {
 
 	public static void main(String[] args) {
 		// 대소문자 바꿔서 출력하기

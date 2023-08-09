@@ -2,7 +2,7 @@ package sol_algorithm;
 
 import java.util.Scanner;
 
-public class al7 {
+public class Al7 {
 
 	public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

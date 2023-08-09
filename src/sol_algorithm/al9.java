@@ -1,6 +1,6 @@
 package sol_algorithm;
 
-public class al9 {
+public class Al9 {
 
 	public static void main(String[] args) {
 		 int end;
