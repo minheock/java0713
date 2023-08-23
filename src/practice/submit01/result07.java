@@ -127,7 +127,6 @@ public class result07 {
 		}
 		Collections.sort(numbers);
 		return numbers;
-		
 	}
 	
 	
