@@ -6,7 +6,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/dev/workspace_java/java0713/lib/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/dev/workspace/workspace_java/prac_java/java0713/lib/json-simple-1.1.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/202-20/Downloads/ojdbc6-11.2.0.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
