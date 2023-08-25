@@ -43,6 +43,9 @@ public class ConnectionFactory {
 		return conn;
 	}
 	
+	public int getMaxConn() {
+		return maxConn;
+	}
 	public static void main(String[] args) {
 		ConnectionFactory test = ConnectionFactory.getInstance();
 		try {
@@ -53,4 +56,6 @@ public class ConnectionFactory {
 			e.printStackTrace();
 		}
 	}
+	
+	
 }
