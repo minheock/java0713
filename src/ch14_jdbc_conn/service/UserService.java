@@ -56,5 +56,17 @@ public class UserService {
 		return null;
 	}
 	
+	// 게시글 상세내용 조회
+	public ArrayList<BbsVO> bbsContent() {
+		Connection conn = cp.getConnection();
+		try {
+			return dao.bbsContent(conn);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		return null;
+	}
+	
 	
 }

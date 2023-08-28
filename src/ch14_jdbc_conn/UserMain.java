@@ -1,6 +1,8 @@
 package ch14_jdbc_conn;
 
 import java.sql.Connection;
+import java.text.MessageFormat;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import ch14_jdbc_conn.model.BbsVO;
@@ -13,6 +15,7 @@ public class UserMain {
 		Scanner sc = new Scanner(System.in);
 		UserService userService = UserService.getInstance();
 		System.out.println(userService.bbsList());
+		System.out.println(userService.bbsContent());
 		while(true) {
 			System.out.println("어떤 작업을 원하시나요??");
 			System.out.println("1.로그인|2.회원가입|3.종료");
@@ -31,7 +34,27 @@ public class UserMain {
 					System.out.println(userVO.getUserNm() + "님 환영합니다.");
 					// 게시글 출력
 					// BbsVO, UserDao쪽에 select, UserService 쪽에 
-					System.out.println(userService.bbsList());
+					ArrayList<BbsVO> list = userService.bbsList();
+					 for(int i = 0 ; i < list.size(); i ++) {
+						 String result =  MessageFormat.format("게시글 {0} | {1} | {2} | {3} |"
+								 , list.get(i).getRnum(), list.get(i).getBbsNo()
+								 , list.get(i).getBbsTitle(), list.get(i).getAuthorId());
+						 System.out.println(result);
+					 }
+					System.out.println("어떤 작업을 원하시나요?");
+					System.out.println("1.상세조회|2.게시글삭제|3.종료");
+					command = Integer.parseInt(sc.nextLine());
+					if(command == 1) {
+						System.out.println("상세 내용을 보고싶은 번호 순서를 입력하세요");
+						// 게시글중 1 입력시 게시글1의 상세내용과 댓글을 출력하세요
+						// (1) 상세내용을 담을 VO 생성 or 기존 VO 컬럼추가
+						// (2) 상세내용 query 작성
+						// (3) dao, service 메서드 추가
+						// (4) 1입력시 1에 해당하는 bbsno로 조회내용을 출력
+						ArrayList<BbsVO> listcon = userService.bbsContent();
+						int Detail = sc.nextInt();
+						System.out.println(listcon.get(Detail).getBbsContent());
+					}
 				}else {
 					System.out.println("아이디 비번을 확인하세요");
 				}

@@ -59,8 +59,7 @@ public class UserDao {
 	public ArrayList<BbsVO> bbsList(Connection conn) throws SQLException{
 		
 		ArrayList<BbsVO> bbsList = new ArrayList<BbsVO>();
-		StringBuffer query = new StringBuffer();
-		
+		StringBuffer query = new StringBuffer();		
 		query.append(" SELECT ROWNUM as rnum ");
 		query.append("      ,  count(*) OVER() as all_cnt ");
 		query.append("      ,  a.bbs_no as bbs_no ");
@@ -76,23 +75,62 @@ public class UserDao {
 		query.append("  WHERE parent_no IS NULL ");
 		query.append("  ORDER BY update_dt DESC ");
 		query.append("  )a ");
+	
 		PreparedStatement ps = conn.prepareStatement(query.toString());
 		ResultSet rs = ps.executeQuery();
-		while(rs.next()) {
-			BbsVO tem = new BbsVO();
+		System.out.println(rs+ "rs임다000");
+		while(rs.next()) {			
+			BbsVO tem = new BbsVO(); 
+			System.out.println(rs.getString("bbs_title") + "rs임다");
+			tem.setRnum(rs.getInt("rnum"));
 			tem.setBbsNo(rs.getInt("bbs_no"));
 	//		tem.setParentNo(rs.getInt("parent_no"));
 	//		tem.setBbsContent(rs.getString("bbs_content"));
 			tem.setBbsTitle(rs.getString("bbs_title"));
 			tem.setAuthorId(rs.getString("author_id"));
 	//		tem.setCreate_dt(rs.getString("create_dt"));
-			tem.setUpdate_dt(rs.getString("update_dt"));
+			tem.setUpdateDt(rs.getString("update_dt"));
 			bbsList.add(tem);
 		}
 		if(ps != null)ps.close();
 		if(rs != null)ps.close();
 		return bbsList;
 	}
+	
+	// content 불러오기
+	public ArrayList<BbsVO> bbsContent(Connection conn) throws SQLException {
+		ArrayList<BbsVO> bbsContent = new ArrayList<BbsVO>();
+		StringBuffer query = new StringBuffer();
+//		query.append(" SELECT bbs_no");
+//		query.append("    ,  bbs_content");
+//		query.append(" FROM bbs");
+		query.append(" SELECT DECODE(level, 1, '메인글', '댓글') as status");
+		query.append("     ,  a.bbs_no                         as bbs_no");
+		query.append("     ,  LPAD(' ', 3 * (level-1)) || a.bbs_content as bbs_content");
+		query.append("     ,  a.author_id                      as author_id");
+		query.append("     ,  a. update_dt                     as update_dt");
+		query.append(" FROM bbs a");
+		query.append(" START WITH bbs_no = ?");
+		query.append(" CONNECT BY PRIOR a.bbs_no = a.parent_no");
+		query.append(" ORDER SIBLINGS BY update_dt desc");
+		PreparedStatement ps = conn.prepareStatement(query.toString());
+//		ps.setInt(1, res.getBbsNo());
+		ResultSet rs = ps.executeQuery();
+		System.out.println(rs);
+		while(rs.next()) {
+			BbsVO tem = new BbsVO(); 
+			tem.setStatus(rs.getString("status"));
+			tem.setBbsNo(rs.getInt("bbs_no"));
+			tem.setBbsContent(rs.getString("bbs_content"));
+			tem.setAuthorId(rs.getString("author_id"));
+			tem.setUpdateDt(rs.getString("update_dt"));			
+			bbsContent.add(tem);
+		}
+		if(ps != null)ps.close();
+		if(rs != null)ps.close();
+		return bbsContent;		
+	}
+	
 	
 	
 }

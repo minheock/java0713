@@ -1,47 +1,70 @@
 package ch14_jdbc_conn.model;
 
 public class BbsVO {
-	private int bbsNo         ;
-	private int parentNo      ;
-	private String bbsTitle   ;
-	private String bbsContent ;
-	private String authorId   ;
-	private String create_dt   ;
-	private String update_dt   ;
-	
-
-	
-
-	public BbsVO(int bbsNo, int parentNo, String bbsTitle, String authorId, String create_dt, String update_dt) {
+	 private int rnum;     
+     private int allCnt;     
+     private int bbsNo;     
+     private String status;
+     private String bbsContent;
+     private String bbsTitle;   
+     private String authorId;   
+     
+     /**
+	 * @param rnum
+	 * @param allCnt
+	 * @param bbsNo
+	 * @param status
+	 * @param bbsContent
+	 * @param bbsTitle
+	 * @param authorId
+	 * @param updateDt
+	 */
+	public BbsVO(int rnum, int allCnt, int bbsNo, String status, String bbsContent, String bbsTitle, String authorId,
+			String updateDt) {
+		this.rnum = rnum;
+		this.allCnt = allCnt;
 		this.bbsNo = bbsNo;
-		this.parentNo = parentNo;
+		this.status = status;
+		this.bbsContent = bbsContent;
 		this.bbsTitle = bbsTitle;
 		this.authorId = authorId;
-		this.create_dt = create_dt;
-		this.update_dt = update_dt;
+		this.updateDt = updateDt;
+	}
+	public BbsVO(){
+		
 	}
 	
-	public BbsVO() {
-		// TODO Auto-generated constructor stub
+	@Override
+	public String toString() {
+		return "BbsVO [rnum=" + rnum + ", allCnt=" + allCnt + ", bbsNo=" + bbsNo + ", status=" + status
+				+ ", bbsContent=" + bbsContent + ", bbsTitle=" + bbsTitle + ", authorId=" + authorId + ", updateDt="
+				+ updateDt + "]";
 	}
 
+
+	public int getRnum() {
+		return rnum;
+	}
+	public void setRnum(int rnum) {
+		this.rnum = rnum;
+	}
+	public int getAllCnt() {
+		return allCnt;
+	}
+	public void setAllCnt(int allCnt) {
+		this.allCnt = allCnt;
+	}
 	public int getBbsNo() {
 		return bbsNo;
 	}
 	public void setBbsNo(int bbsNo) {
 		this.bbsNo = bbsNo;
 	}
-	public int getParentNo() {
-		return parentNo;
+	public String getStatus() {
+		return status;
 	}
-	public void setParentNo(int parentNo) {
-		this.parentNo = parentNo;
-	}
-	public String getBbsTitle() {
-		return bbsTitle;
-	}
-	public void setBbsTitle(String bbsTitle) {
-		this.bbsTitle = bbsTitle;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	public String getBbsContent() {
 		return bbsContent;
@@ -49,31 +72,28 @@ public class BbsVO {
 	public void setBbsContent(String bbsContent) {
 		this.bbsContent = bbsContent;
 	}
+	public String getBbsTitle() {
+		return bbsTitle;
+	}
+	public void setBbsTitle(String bbsTitle) {
+		this.bbsTitle = bbsTitle;
+	}
 	public String getAuthorId() {
 		return authorId;
 	}
 	public void setAuthorId(String authorId) {
 		this.authorId = authorId;
 	}
-	public String getCreate_dt() {
-		return create_dt;
+	public String getUpdateDt() {
+		return updateDt;
 	}
-	public void setCreate_dt(String create_dt) {
-		this.create_dt = create_dt;
+	public void setUpdateDt(String updateDt) {
+		this.updateDt = updateDt;
 	}
-	public String getUpdate_dt() {
-		return update_dt;
-	}
-	public void setUpdate_dt(String update_dt) {
-		this.update_dt = update_dt;
-	}
-	
-	
-	@Override
-	public String toString() {
-		return "BbsVO [bbsNo=" + bbsNo + ", parentNo=" + parentNo + ", bbsTitle=" + bbsTitle + ", bbsContent="
-				+ bbsContent + ", authorId=" + authorId + ", create_dt=" + create_dt + ", update_dt=" + update_dt + "]";
-	}
-	
-	
+	private String updateDt;
+
+     
+     
 }
+
+	
